@@ -1,0 +1,18 @@
+﻿@model List<Flower>
+
+@foreach (var f in Model)
+{
+    <li class="span4">
+        <article class="thumbnail">
+            <img src="@f.ImageUrl" />
+            <div class="info clearfix">
+                <h3>@f.Name</h3>
+                <hr>
+                <b>Price:<span>@f.Price.ToString("F")</span></b>
+                <a class="btn pull-right btn-success" href="/cart/add/@f.Id?ret=@Context.Request.Path">
+                    <i class="icon-plus icon-white"></i> Add to cart
+                </a>
+            </div>
+        </article>
+    </li>
+}
