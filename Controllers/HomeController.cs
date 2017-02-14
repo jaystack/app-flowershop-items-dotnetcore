@@ -11,12 +11,14 @@ using App.Flowershop.Items.Models;
 using App.Flowershop.Items.ViewModels;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Cors;
+using SystemEndpoints;
 
 namespace App.Flowershop.Items.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IOptions<Config> config;
+        private IStore store;
 
         public HomeController(IOptions<Config> optionsAccessor)
         {
@@ -26,7 +28,9 @@ namespace App.Flowershop.Items.Controllers
         [HttpGet("/")]
         public async Task<IActionResult> Index()
         {
-            var data = await getResponseAsync(config.Value.DataApi, "data/categories");
+            store = new Store(config.Value.hosts);
+
+            var data = await getResponseAsync(store.GetServiceAddress(config.Value.DataApi), "data/categories");
 
             var vm = new CategoriesViewModel();
 
@@ -38,8 +42,9 @@ namespace App.Flowershop.Items.Controllers
         [HttpGet("/checkout")]
         public async Task<IActionResult> Checkout()
         {
-            var categoires = await getResponseAsync(config.Value.DataApi, "data/categories");
-            var flowers = await getResponseAsync(config.Value.DataApi, "data/flowers/");
+            store = new Store(config.Value.hosts);
+            var categoires = await getResponseAsync(store.GetServiceAddress(config.Value.DataApi), "data/categories");
+            var flowers = await getResponseAsync(store.GetServiceAddress(config.Value.DataApi), "data/flowers/");
 
             var vm = new CategoriesViewModel();
             vm.Categories = JsonConvert.DeserializeObject<List<Category>>(categoires);
@@ -51,8 +56,9 @@ namespace App.Flowershop.Items.Controllers
         [HttpGet("/category/{catName}")]
         public async Task<IActionResult> Category(string catName)
         {
-            var categoires = await getResponseAsync(config.Value.DataApi, "data/categories");
-            var flowersByCategory = await getResponseAsync(config.Value.DataApi, "data/flowers/" + catName);
+            store = new Store(config.Value.hosts);
+            var categoires = await getResponseAsync(store.GetServiceAddress(config.Value.DataApi), "data/categories");
+            var flowersByCategory = await getResponseAsync(store.GetServiceAddress(config.Value.DataApi), "data/flowers/" + catName);
 
             var vm = new CategoriesViewModel();
 
