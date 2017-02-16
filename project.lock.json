@@ -2015,7 +2015,7 @@
           }
         }
       },
-      "system-endpoints/1.0.0": {
+      "system-endpoints/1.0.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -6240,7 +6240,7 @@
           "runtimes/unix/lib/netstandard1.5/System.Runtime.Extensions.dll": {}
         }
       },
-      "system-endpoints/1.0.0": {
+      "system-endpoints/1.0.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -10337,7 +10337,7 @@
           "runtimes/unix/lib/netstandard1.5/System.Runtime.Extensions.dll": {}
         }
       },
-      "system-endpoints/1.0.0": {
+      "system-endpoints/1.0.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -14433,7 +14433,7 @@
           "runtimes/unix/lib/netstandard1.5/System.Runtime.Extensions.dll": {}
         }
       },
-      "system-endpoints/1.0.0": {
+      "system-endpoints/1.0.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -18490,7 +18490,7 @@
           "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll": {}
         }
       },
-      "system-endpoints/1.0.0": {
+      "system-endpoints/1.0.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -23149,13 +23149,13 @@
         "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll"
       ]
     },
-    "system-endpoints/1.0.0": {
-      "sha512": "TcV0SGP9QMPa64AlIVpqLTVFBtJomrI3r2TVQu60dgZc6klfJR8NdT7y6wjYZ/mcSh8+mwlwRj1C+KWiC1S4ww==",
+    "system-endpoints/1.0.1": {
+      "sha512": "V4vvtQCj8qLcbK6RQCKLSHt6GUtDY6aT1x16t0cbOP1f/WXOUyB4QiHrmQjHWWZ06VHXmTh/7vZkKNgiR3EcMA==",
       "type": "package",
-      "path": "system-endpoints/1.0.0",
+      "path": "system-endpoints/1.0.1",
       "files": [
         "lib/netstandard1.6/system-endpoints.dll",
-        "system-endpoints.1.0.0.nupkg.sha512",
+        "system-endpoints.1.0.1.nupkg.sha512",
         "system-endpoints.nuspec"
       ]
     },
@@ -27791,7 +27791,7 @@
       "Microsoft.NETCore.App >= 1.1.0",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.1.0",
       "Newtonsoft.Json >= 9.0.1",
-      "system-endpoints >= 1.0.0"
+      "system-endpoints >= 1.0.1"
     ],
     ".NETCoreApp,Version=v1.0": []
   },
