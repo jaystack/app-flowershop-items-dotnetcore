@@ -30,7 +30,7 @@ namespace App.Flowershop.Items.Controllers
         {
             store = new Store(config.Value.hosts);
 
-            var data = await getResponseAsync(store.GetServiceAddress(config.Value.DataApi), "data/categories");
+            var data = await getResponseAsync("http://" + store.GetServiceAddress(config.Value.DataApi), "data/categories");
 
             var vm = new CategoriesViewModel();
 
@@ -43,8 +43,8 @@ namespace App.Flowershop.Items.Controllers
         public async Task<IActionResult> Checkout()
         {
             store = new Store(config.Value.hosts);
-            var categoires = await getResponseAsync(store.GetServiceAddress(config.Value.DataApi), "data/categories");
-            var flowers = await getResponseAsync(store.GetServiceAddress(config.Value.DataApi), "data/flowers/");
+            var categoires = await getResponseAsync("http://" + store.GetServiceAddress(config.Value.DataApi), "data/categories");
+            var flowers = await getResponseAsync("http://" + store.GetServiceAddress(config.Value.DataApi), "data/flowers/");
 
             var vm = new CategoriesViewModel();
             vm.Categories = JsonConvert.DeserializeObject<List<Category>>(categoires);
@@ -57,8 +57,8 @@ namespace App.Flowershop.Items.Controllers
         public async Task<IActionResult> Category(string catName)
         {
             store = new Store(config.Value.hosts);
-            var categoires = await getResponseAsync(store.GetServiceAddress(config.Value.DataApi), "data/categories");
-            var flowersByCategory = await getResponseAsync(store.GetServiceAddress(config.Value.DataApi), "data/flowers/" + catName);
+            var categoires = await getResponseAsync("http://" + store.GetServiceAddress(config.Value.DataApi), "data/categories");
+            var flowersByCategory = await getResponseAsync("http://" + store.GetServiceAddress(config.Value.DataApi), "data/flowers/" + catName);
 
             var vm = new CategoriesViewModel();
 
