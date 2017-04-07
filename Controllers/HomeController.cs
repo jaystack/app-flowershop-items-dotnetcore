@@ -5,13 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using App.Flowershop.Items.Models;
 using App.Flowershop.Items.ViewModels;
 using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Cors;
-using SystemEndpoints;
+using SystemEndpointsDotnetCore;
 
 namespace App.Flowershop.Items.Controllers
 {
